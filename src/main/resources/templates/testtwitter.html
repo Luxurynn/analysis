@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <title>Home</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/component.css">
+
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/vegas.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--bootstrap table-->
+    <link href="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.css" rel="stylesheet">
+    <!-- Google web font  -->
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
+
+</head>
+<body id="top" data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
+
+
+<!-- Preloader section -->
+
+<div class="preloader">
+    <div class="sk-spinner sk-spinner-pulse"></div>
+</div>
+
+
+<!-- Navigation section  -->
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+            </button>
+            <a href="#top" class="navbar-brand smoothScroll">Oracle Hackathon</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#top" class="smoothScroll"><span>Hello</span></a></li>
+                <li><a href="#weibo" class="smoothScroll"><span>Weibo</span></a></li>
+                <li><a href="#about" class="smoothScroll"><span>Twitter</span></a></li>
+                <li><a href="#shelly" class="smoothScroll"><span>Weibo2</span></a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Home section -->
+
+
+
+<!--Weibo Section-->
+
+
+<!-- Twitter section -->
+
+<section id="about">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="section-title text-center">
+                    <h4>Word Cloud</h4>
+                </div>
+
+                <div id="team-carousel" class="owl-carousel">
+
+                    <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="team-thumb">
+                            <div class="image-holder" >
+                                <img src="images/oraclejava.jpeg" class="img-responsive">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="team-thumb">
+                            <div class="image-holder">
+                                <img src="images/oracledatabase.jpeg" class="img-responsive">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="team-thumb">
+                            <div class="image-holder">
+                                <img src="images/oraclecloud.jpeg" class="img-responsive">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6 col-sm-12 topDistance wow fadeInUp" data-wow-delay="0.3s" >
+                <div id="javacontainer" style="height: 80vh"></div>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+                <!--<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script>-->
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+                <script type="text/javascript">
+        var dom = document.getElementById("javacontainer");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        var weatherIcons = {
+            'Sunny': './data/asset/img/weather/sunny_128.png',
+            'Cloudy': './data/asset/img/weather/cloudy_128.png',
+            'Showers': './data/asset/img/weather/showers_128.png'
+        };
+
+        option = {
+            title: {
+                text: 'Oracle Java',
+                subtext: 'Main products being retrieved',
+                left: 'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                // orient: 'vertical',
+                // left: 0,
+                bottom: 10,
+                left: 'center',
+            },
+            series : [
+                {
+                    type: 'pie',
+                    radius : '65%',
+                    center: ['50%', '50%'],
+                    selectedMode: 'single',
+                    data:[
+
+                        {value:116, name: 'Java SE'},
+                        {value:35, name: 'Java SE Subscription'},
+                        {value:2, name: 'Java Embedded'},
+                        {value:4, name: 'Java EE'},
+                        {value:41, name: 'Java ME'},
+                        {value:4, name: 'JavaFX'},
+                        {value:103, name: 'Java Card'},
+                        {value:6, name: 'Java TV'},
+                        {value:13, name: 'Java DB'}
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+       </script>
+            </div>
+
+            <div class="col-md-6 col-sm-12 topDistance wow fadeInUp" data-wow-delay="0.3s">
+                <div id="databasecontainer" style="height: 80vh"></div>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+                <!--<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script>-->
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+                <script type="text/javascript">
+        var dom = document.getElementById("databasecontainer");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        option = {
+            title: {
+                text: 'Oracle Database',
+                subtext: 'Main products being retrieved',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c}"
+            },
+            toolbox: {
+                feature: {
+                    dataView: {readOnly: false},
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            legend: {
+                data: ['']
+            },
+            calculable: true,
+            series: [
+                {
+                    name:'',
+                    type:'funnel',
+                    left: '10%',
+                    top: 60,
+                    //x2: 80,
+                    bottom: 60,
+                    width: '80%',
+                    // height: {totalHeight} - y - y2,
+                    min: 0,
+                    max: 100,
+                    minSize: '0%',
+                    maxSize: '100%',
+                    sort: 'descending',
+                    gap: 2,
+                    label: {
+                        show: true,
+                        position: 'inside'
+                    },
+                    labelLine: {
+                        length: 10,
+                        lineStyle: {
+                            width: 1,
+                            type: 'solid'
+                        }
+                    },
+                    itemStyle: {
+                        borderColor: '#fff',
+                        borderWidth: 1
+                    },
+                    emphasis: {
+                        label: {
+                            fontSize: 20
+                        }
+                    },
+                    data: [
+                        {value: 5107, name: 'Database 12c'},
+                        {value: 862, name: 'Database Cloud Service'},
+                        {value: 102, name: 'MySQL'},
+                        {value: 65, name: 'Database Express Edition (XE)'},
+                        {value: 64, name: 'Exadata Database Machine'},
+                        {value: 53, name: 'Database Options'},
+                        {value: 51, name: 'NoSQL Database'},
+                        {value: 48, name: 'Database Appliance'},
+                        {value: 21, name: 'Database Mobile Service'},
+                        {value: 4, name: 'Management Packs'},
+                         {value: 2, name: 'TimesTen In-Memory Database'},
+                    ]
+                }
+            ]
+        };
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+       </script>
+            </div>
+
+            <div class="col-md-offset-1 col-md-10 col-sm-12 topDistance wow fadeInUp" data-wow-delay="0.3s">
+
+                <div id="pacontainer" style="height: 80vh"></div>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+                <!--<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script>-->
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+                <script type="text/javascript">
+          var dom = document.getElementById("pacontainer");
+          var myChart = echarts.init(dom);
+          var app = {};
+          option = null;
+
+          option = {
+              title: {
+                  text: 'Oracle Cloud Paas',
+                  left: 'center'
+              },
+              tooltip: {
+                  trigger: 'axis',
+                  axisPointer: {
+                      type: 'cross',
+                      crossStyle: {
+                          color: '#999'
+                      }
+                  }
+              },
+              toolbox: {
+                  feature: {
+                      dataView: {show: true, readOnly: false},
+                      magicType: {show: true, type: ['line', 'bar']},
+                      restore: {show: true},
+                      saveAsImage: {show: true}
+                  }
+              },
+              legend: {
+                  data:['Autonomous']
+              },
+              xAxis: [
+                  {
+                      type: 'category',
+                      data: ['2018.04','2018.05','2018.06','2018.07','2018.08','2018.09','2018.10','2018.11','2018.12','2019.01','2019.02','2019.03'],
+                      axisPointer: {
+                          type: 'shadow'
+                      }
+                  }
+              ],
+              yAxis: [
+                  {
+                      type: 'value',
+                      name: 'amount',
+                      min: 0,
+                      max: 1000,
+                      interval: 50,
+                      axisLabel: {
+                          formatter: '{value} '
+                      }
+                  },
+              ],
+              series: [
+                  {
+                      name:'',
+                      type:'bar',
+                      data:[467,571,885,482,482,468,273,169,127,162,235,97]
+                  }
+
+              ]
+          };
+          ;
+          if (option && typeof option === "object") {
+              myChart.setOption(option, true);
+          }
+       </script>
+            </div>
+
+            <div class="1 col-md-offset-1 col-md-10 col-sm-12 topDistance wow fadeInUp" data-wow-delay="0.3s">
+                <div id="sacontainer" style="height: 80vh"></div>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+                <!--<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script>-->
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+                <script type="text/javascript">
+          var dom = document.getElementById("sacontainer");
+          var myChart = echarts.init(dom);
+          var app = {};
+          option1 = null;
+
+          setTimeout(function b() {
+
+              option1 = {
+                  title: {
+                      text: 'Oracle Cloud Saas'
+                  },
+                  legend: {},
+                  tooltip: {
+                      trigger: 'axis',
+                      showContent: false
+                  },
+                  dataset: {
+                      source: [
+                          ['product', '2018.04','2018.05', '2018.06','2018.07', '2018.08', '2018.09','2018.10', '2018.11','2018.12', '2019.01','2019.02','2019.03'],
+                          ['Oracle ERP Cloud', 26, 69,70,27,27,65,102,46,49,52,81,49],
+                          ['Oracle HCM Cloud', 35,14,36,13,13,36,65,29,28,19,31,16],
+                          ['Oracle EPM Cloud', 6,2,5,1,1,5,6,5,3,7,11,10],
+                          ['Oracle SCM Cloud', 2,2,8,5,5,4,5,5,5,8,18,12]
+                      ]
+                  },
+                  xAxis: {type: 'category'},
+                  yAxis: {gridIndex: 0},
+                  grid: {top: '55%'},
+                  series: [
+                      {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                      {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                      {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                      {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                      {
+                          type: 'pie',
+                          id: 'pie',
+                          radius: '30%',
+                          center: ['50%', '25%'],
+                          label: {
+                              formatter: '{b}: {@2012} ({d}%)'
+                          },
+                          encode: {
+                              itemName: 'product',
+                              value: '2018.04',
+                              tooltip: '2018.04'
+                          }
+                      }
+                  ]
+              };
+
+              myChart.on('updateAxisPointer', function b(event) {
+                  var xAxisInfo = event.axesInfo[0];
+                  if (xAxisInfo) {
+                      var dimension = xAxisInfo.value + 1;
+                      myChart.setOption({
+                          series: {
+                              id: 'pie',
+                              label: {
+                                  formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+                              },
+                              encode: {
+                                  value: dimension,
+                                  tooltip: dimension
+                              }
+                          }
+                      });
+                  }
+              });
+
+              myChart.setOption(option1);
+
+          });;
+          if (option && typeof option === "object") {
+              myChart.setOption(option1, true);
+          }
+       </script>
+            </div>
+
+            <div class="col-md-offset-1 col-md-10 col-sm-12 topDistance">
+                <div id="iacontainer" style="height: 80vh"></div>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+                <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+                <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+                <script type="text/javascript">
+            var dom = document.getElementById("iacontainer");
+            var myChart1 = echarts.init(dom);
+            var app = {};
+            option = null;
+
+            setTimeout(function a() {
+
+                option = {
+                    title: {
+                        text: 'Oracle Cloud Iaas',
+                        subtext: 'Main products being retrieved'
+                    },
+                    legend: {},
+                    tooltip: {
+                        trigger: 'axis',
+                        showContent: false
+                    },
+                    dataset: {
+                        source: [
+                            ['product', '2018.04','2018.05', '2018.06','2018.07', '2018.08', '2018.09','2018.10', '2018.11','2018.12', '2019.01','2019.02','2019.03'],
+                            ['Security', 344,216,401,181,181,178,488,328,217,236,391,80],
+                            ['Storage',43,32,83,41,41,68,61,44,92,125,133,11],
+                            ['Compute', 22,17,26,14,14,15,37,21,10,16,22,6],
+                            ['Networking', 17,14,20,5,5,24,14,29,13,28,27,12]
+                        ]
+                    },
+                    xAxis: {type: 'category'},
+                    yAxis: {gridIndex: 0},
+                    grid: {top: '55%'},
+                    series: [
+                        {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                        {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                        {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                        {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                        {
+                            type: 'pie',
+                            id: 'pie',
+                            radius: '30%',
+                            center: ['50%', '25%'],
+                            label: {
+                                formatter: '{b}: {@2012} ({d}%)'
+                            },
+                            encode: {
+                                itemName: 'product',
+                                value: '2018.04',
+                                tooltip: '2018.04'
+                            }
+                        }
+                    ]
+                };
+
+                myChart1.on('updateAxisPointer', function a(event) {
+                    var xAxisInfo = event.axesInfo[0];
+                    if (xAxisInfo) {
+                        var dimension = xAxisInfo.value + 1;
+                        myChart1.setOption({
+                            series: {
+                                id: 'pie',
+                                label: {
+                                    formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+                                },
+                                encode: {
+                                    value: dimension,
+                                    tooltip: dimension
+                                }
+                            }
+                        });
+                    }
+                });
+
+                myChart1.setOption(option);
+
+            });;
+            if (option && typeof option === "object") {
+                myChart1.setOption(option, true);
+            }
+       </script>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!--shelly section-->
+
+
+<!-- Footer section -->
+
+<!--<footer>-->
+<!--<div class="container">-->
+<!---->
+<!--<div class="row">-->
+
+<!--<div class="col-md-12 col-sm-12">-->
+<!---->
+<!--<ul class="social-icon"> -->
+<!--<li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="0.2s"></a></li>-->
+<!--<li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="0.4s"></a></li>-->
+<!--<li><a href="#" class="fa fa-linkedin wow fadeInUp" data-wow-delay="0.6s"></a></li>-->
+<!--<li><a href="#" class="fa fa-instagram wow fadeInUp" data-wow-delay="0.8s"></a></li>-->
+<!--<li><a href="#" class="fa fa-google-plus wow fadeInUp" data-wow-delay="1.0s"></a></li>-->
+<!--</ul>-->
+
+<!--<p class="wow fadeInUp"  data-wow-delay="1s" >Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>-->
+<!---->
+<!--</div>-->
+<!---->
+<!--</div>-->
+<!---->
+<!--</div>-->
+<!--</footer>-->
+
+<!-- Back top -->
+<a href="#" class="go-top"><i class="fa fa-angle-up"></i></a>
+
+<!-- Javascript  -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/vegas.min.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/toucheffects.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>

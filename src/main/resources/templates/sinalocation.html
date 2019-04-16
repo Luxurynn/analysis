@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<form action="/search" class="px-5 py-3" >
+    <div class="input-group">
+        <input name="keywords" type="text" class="form-control" placeholder="歌词搜索，请输入歌词内容" aria-label="歌词搜索，请输入歌词内容" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">搜索</button>
+        </div>
+        <input type="hidden" name="pNum" value="0"/>
+    </div>
+</form>
+<div class="alert alert-light" role="alert">
+    为您找到0个结果：
+</div>
+<ul class="list-group">
+    <li th:each="sina : ${pageSina.content}" class="list-group-item">
+        <div class="row">
+            <a th:href="${sina.city}">
+                <h4 scope="row" th:text="${sina.gender} " ></h4>
+            </a>
+            <a th:href="${sina.city}">
+                <h4 scope="row" th:text="${sina.city} " ></h4>
+            </a>
+            <a th:href="${sina.city}">
+                <h4 scope="row" th:text="${sina.nick_name}" ></h4>
+            </a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <h6 scope="row" th:text="${sina.province}" class="align-bottom" ></h6>
+        </div>
+    </li>
+</ul>
+
+<nav aria-label="..." class="">
+    <ul class="pagination pagination-sm justify-content-center py-5">
+        <div class="col-md-6">
+            当前第 [[${pageSina.getNumber()}]]页,共 [[${pageSina.getTotalPages()}]] 页.一共 [[${pageSina.getTotalElements()}]] 条记录
+        </div>
+        <li class="page-item" th:if="${pageSina.hasNext()}">
+            <a th:href="'/search?pNum=1'">首页</a>
+        </li>
+
+        <li class="page-item" th:if="${pageSina.hasPrevious()}">
+            <a th:href="'/search?pNum='+${pageSina.getNumber()-1}">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+            </a>
+        </li>
+        <li class="page-item" th:if="${pageSina.hasNext()}">
+            <a th:href="'/search?pNum='+${pageSina.getNumber()+1}">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+            </a>
+        </li>
+        <!--<li class="page-item ">-->
+            <!--<a class="page-link" href="#">-->
+                <!--<span aria-hidden="true">&laquo;</span>-->
+                <!--<span class="sr-only">Previous</span>-->
+            <!--</a>-->
+        <!--</li>-->
+        <!--&lt;!&ndash;<li class="page-item"><a class="page-link" href="#">1</a></li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li class="page-item"><a class="page-link" href="#">2</a></li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li class="page-item"><a class="page-link" href="#">3</a></li>&ndash;&gt;-->
+        <!--<li class="page-item">-->
+            <!--<a class="page-link" href="#">-->
+                <!--<span aria-hidden="true">&raquo;</span>-->
+                <!--<span class="sr-only">Next</span>-->
+            <!--</a>-->
+        <!--</li>-->
+        <li>
+            <a th:href="'/search?pNum='+${pageSina.getTotalPages()}">尾页</a>
+        </li>
+    </ul>
+</nav>
+</body>
+</html>
