@@ -17,6 +17,28 @@ public class twitterCloud implements Serializable {
     private String url;
     private Date datetime;
 
+    public void set_id(String _id) {
+        this._id = _id;
+    }
+
+    public void setUsernameTweet(String usernameTweet) {
+        this.usernameTweet = usernameTweet;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public void setDatetime(Date datetime) {
+        this.datetime = datetime;
+    }
+
+
+
     public String get_id() {
         return _id;
     }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -36,13 +37,16 @@ public class testController {
 //    public ResponseEntity<?> getAll(@RequestParam(value = "pageNum") Integer pNum,
 //                                    @RequestParam(value = "pageSize",defaultValue = "10") Integer pSize,
 //                                    @RequestParam(value = "name") String keywords) {
-    @RequestMapping("/Home/GetDepartment")
+    @RequestMapping("/tabletest/GetDepartment")
     @ResponseBody
-    public ResponseEntity<?> getAll(int limit, int offset, String textcontent) {
-
-        System.out.println("keywords" + textcontent + ":"+ offset + ":" + limit);
-       // textcontent = "java";
-        Page<twitterCloud> page = twitterCloudService.searchCloud(limit,offset,textcontent);
+    public ResponseEntity<?> GetDepartment(HttpServletRequest request) {
+        int limit = 0;
+        int offset=0;
+        String searchString = request.getParameter("searchStringid");
+        //txt_search_departmentname = "java";
+        System.out.println("keywords" + searchString + ":"+ offset + ":" + limit);
+        //searchString = "java";
+        Page<twitterCloud> page = twitterCloudService.searchCloud(limit,offset,searchString);
         //List<CadreInfo> list = cadreInfoService.getAll(name);//获取列表数据
         //PageInfo<CadreInfo> pageInfo = new PageInfo<>(list);
         Map map = new HashMap();

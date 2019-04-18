@@ -14,6 +14,8 @@ import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilde
 import org.springframework.data.elasticsearch.core.query.SearchQuery;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+
 import static org.elasticsearch.index.query.QueryBuilders.functionScoreQuery;
 import static org.elasticsearch.index.query.QueryBuilders.matchPhraseQuery;
 
@@ -105,7 +107,7 @@ public class twitterCloudService {
 //                //highlightQuery必须单独设置，否则在使用FunctionScoreQuery时，highlight配置不生效，返回结果无highlight元素
 //                //官方解释：Highlight matches for a query other than the search query. This is especially useful if you use a rescore query because those are not taken into account by highlighting by default.
 //                .highlightQuery(matchPhraseQuery("lyric", searchContent));
-
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return new NativeSearchQueryBuilder()
                 .withPageable(pageable)
                 .withSourceFilter(new FetchSourceFilter(new String[]{"_id","usernameTweet","text","url"},new String[]{}))

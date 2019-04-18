@@ -10,17 +10,18 @@ $(function () {
 
 });
 
-
+var $table = $('#tb_departments');
 var TableInit = function () {
     var oTableInit = new Object();
     //初始化Table
     oTableInit.Init = function () {
         $('#tb_departments').bootstrapTable({
             url: '/Home/GetDepartment',         //请求后台的URL（*）
-            method: 'get',                      //请求方式（*）
+            method: 'POST',                      //请求方式（*）
             toolbar: '#toolbar',                //工具按钮用哪个容器
             striped: true,                      //是否显示行间隔色
             cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+            contentType: "application/x-www-form-urlencoded",
             pagination: true,                   //是否显示分页（*）
             sortable: false,                     //是否启用排序
             sortOrder: "asc",                   //排序方式
@@ -29,7 +30,7 @@ var TableInit = function () {
             pageNumber:1,                       //初始化加载第一页，默认第一页
             pageSize: 10,                       //每页的记录行数（*）
             pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）
-            search: true,                       //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
+            search: false,                       //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
             strictSearch: true,
             showColumns: true,                  //是否显示所有的列
             showRefresh: true,                  //是否显示刷新按钮
@@ -43,14 +44,14 @@ var TableInit = function () {
             columns: [{
                 checkbox: true
             }, {
-                field: 'Name',
-                title: '部门名称'
+                field: 'usernameTweet',
+                title: 'USER NAME'
             }, {
-                field: 'ParentName',
-                title: '上级部门'
+                field: 'text',
+                title: 'TWEET'
             }, {
-                field: 'Level',
-                title: '部门级别'
+                field: 'url',
+                title: 'URL'
             }, {
                 field: 'Desc',
                 title: '描述'
@@ -61,11 +62,15 @@ var TableInit = function () {
     //得到查询的参数
     oTableInit.queryParams = function (params) {
         var temp = {   //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
-            limit: params.limit,   //页面大小
-            offset: params.offset,  //页码
-            departmentname: $("#txt_search_departmentname").val(),
-            statu: $("#txt_search_statu").val()
+//            limit: params.limit,   //页面大小
+//            offset: params.offset,  //页码
+            txt_search_departmentname: $("txt_search_departmentname").val(),
+
+//            statu: $("#txt_search_statu").val()
+
         };
+        console.log(temp);
+
         return temp;
     };
     return oTableInit;
@@ -78,6 +83,37 @@ var ButtonInit = function () {
 
     oInit.Init = function () {
         //初始化页面上面的按钮事件
+//        $("#btn-add")
+//            .click(function() {
+//                $("#add").modal("show");
+//            });
+//
+//        $("#btn-edit")
+//            .click(function() {
+//                var selectedRaido = $table.bootstrapTable('getSelections');
+//                if (selectedRaido.length === 0) {
+//                    abp.notify.warn("请先选择要编辑的行！");
+//                } else {
+//                    editTask(selectedRaido[0].Id);
+//                }
+//            });
+//
+//        $("#btn-delete")
+//            .click(function() {
+//                var selectedRaido = $table.bootstrapTable('getSelections');
+//                if (selectedRaido.length === 0) {
+//                    abp.notify.warn("请先选择要删除的行！");
+//                } else {
+//                    deleteTask(selectedRaido[0].Id);
+//                }
+//            });
+
+        $("#btn-query")
+            .click(function() {
+                $table.bootstrapTable('refresh');
+            });
+        console.log("run");
+
     };
 
     return oInit;
