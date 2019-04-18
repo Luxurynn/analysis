@@ -29,19 +29,19 @@ $(document).ready(function() {
 
 
  /* Home Slideshow Vegas
-//  -----------------------------------------------*/
-//  $(function() {
-//    $('body').vegas({
-//        slides: [
-//            { src: 'images/slide-img1.jpg' },
-//            { src: 'images/slide-img2.jpg' },
-//            { src: 'images/slide-img3.jpg' }
-//        ],
-//        timer: false,
-//        transition: [ 'zoomIn', ],
-//        animation: ['kenburns']
-//    });
-//  });
+  -----------------------------------------------*/
+  $(function() {
+    $('body').vegas({
+        slides: [
+            { src: 'images/slide1.png' },
+            { src: 'images/slide2.png' },
+            { src: 'images/slide3.png' }
+        ],
+        timer: false,
+        transition: [ 'zoomIn', ],
+        animation: ['kenburns']
+    });
+  });
 
 
   /* Team carousel

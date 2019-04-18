@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"xmlns="http://www.w3.org/1999/xhtml"
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
 
@@ -9,7 +9,7 @@
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 
-	<title>Home</title>
+	<title>Oracle Hackathon</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -71,9 +71,9 @@
     <div class="row">
 
       <div class="col-md-offset-1 col-md-10 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
-        <h1 class="wow fadeInUp" data-wow-delay="0.6s">Oracle Hackathon</h1>
-        <p class="wow fadeInUp" data-wow-delay="0.9s">hackathonsdfasdfsaaaaaaaaaaaaa. Thank you.</p>
-        <a href="#about" class="smoothScroll btn btn-success btn-lg wow fadeInUp" data-wow-delay="1.2s">Learn more</a>
+        <h1 class="wow fadeInUp" data-wow-delay="0.6s">Data Visualization</h1>
+        <p class="wow fadeInUp" data-wow-delay="0.9s">Crawled nearly <strong>20,000</strong> blogs from Weibo and <strong>150,000</strong> tweets from Twitter. Will show you what we found.</p>
+        <a href="#weibo" class="smoothScroll btn btn-success btn-lg wow fadeInUp" data-wow-delay="1.2s">Learn more</a>
       </div>
 
     </div>
@@ -1862,83 +1862,18 @@
 
         </div>
 
-        <div class="col-md-6 col-sm-12 topDistance wow fadeInUp" data-wow-delay="0.3s" >
-          <div id="container" style="height: 80vh"></div>
-          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
-          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
-          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
-          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
-          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
-          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-          <!--<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script>-->
-          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
-          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
-          <script type="text/javascript">
-            var dom = document.getElementById("container");
-            var myChart = echarts.init(dom);
-            var app = {};
-            option = null;
-
-            option = {
-                backgroundColor: '#FFE4E1',
-                title: {
-                    text: '2017-2019 TOP10地区舆论情绪分析统计情况',
-                    left: 'center',
-                            textStyle: {
-                                fontWeight: 'normal',
-                                fontSize: 18
-
-                            }
-                },
-                tooltip: {},
-                xAxis: {
-                    name: '地区',
-                    data: ['北京','福建','广东','上海','江苏','浙江',
-            '河南','山东','陕西','四川'
-            ]
-                },
-                yAxis: {
-                     type: 'value',
-                     name: '舆论平均分',
-                     max: 0.7,
-                     min:0.5,
-                },
-                series: [{
-                    name: '得分',
-                    type: 'bar',
-                    color:'#B0E0E6',
-                    data: ['0.6368',
-            '0.6092',
-            '0.6196',
-            '0.6464',
-            '0.6068',
-            '0.6256',
-            '0.6132',
-            '0.5724',
-            '0.672 ',
-            '0.6176']
-                }]
-            };
-
-            ;
-            if (option && typeof option === "object") {
-                myChart.setOption(option, true);
-            }
-       </script>
-        </div>
-
         <div class="col-md-6 col-sm-12 topDistance wow fadeInUp" data-wow-delay="0.3s">
-          <div id="container2" style="height: 80vh"></div>
-          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
-          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
-          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
-          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
-          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
-          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-          <!-- <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script> -->
-          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
-          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
-          <script type="text/javascript">
+        <div id="container2" style="height: 80vh"></div>
+        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+        <!-- <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script> -->
+        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+        <script type="text/javascript">
               var dom = document.getElementById("container2");
               var myChart = echarts.init(dom);
               var app = {};
@@ -1950,7 +1885,7 @@
               option = {
                   backgroundColor: '#CBFEFD',
                   title: {
-                      text: 'Webo评论地区分布热力图',
+                      text: 'Weibo评论地区分布热力图',
                       left: 'center',
                       textStyle: {
                                   fontSize: 25,
@@ -2091,6 +2026,71 @@
               if (option && typeof option === "object") {
                   myChart.setOption(option, true);
               }
+       </script>
+      </div>
+
+        <div class="col-md-6 col-sm-12 topDistance wow fadeInUp" data-wow-delay="0.3s" >
+          <div id="container" style="height: 80vh"></div>
+          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+          <!--<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script>-->
+          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+          <script type="text/javascript">
+            var dom = document.getElementById("container");
+            var myChart = echarts.init(dom);
+            var app = {};
+            option = null;
+
+            option = {
+                backgroundColor: '#FFE4E1',
+                title: {
+                    text: '2017-2019 TOP10地区舆论情绪分析统计情况',
+                    left: 'center',
+                            textStyle: {
+                                fontWeight: 'normal',
+                                fontSize: 18
+
+                            }
+                },
+                tooltip: {},
+                xAxis: {
+                    name: '地区',
+                    data: ['北京','福建','广东','上海','江苏','浙江',
+            '河南','山东','陕西','四川'
+            ]
+                },
+                yAxis: {
+                     type: 'value',
+                     name: '舆论平均分',
+                     max: 0.7,
+                     min:0.5,
+                },
+                series: [{
+                    name: '得分',
+                    type: 'bar',
+                    color:'#B0E0E6',
+                    data: ['0.6368',
+            '0.6092',
+            '0.6196',
+            '0.6464',
+            '0.6068',
+            '0.6256',
+            '0.6132',
+            '0.5724',
+            '0.672 ',
+            '0.6176']
+                }]
+            };
+
+            ;
+            if (option && typeof option === "object") {
+                myChart.setOption(option, true);
+            }
        </script>
         </div>
 
