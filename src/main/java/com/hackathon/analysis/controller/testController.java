@@ -34,9 +34,7 @@ public class testController {
     }
 
 
-//    public ResponseEntity<?> getAll(@RequestParam(value = "pageNum") Integer pNum,
-//                                    @RequestParam(value = "pageSize",defaultValue = "10") Integer pSize,
-//                                    @RequestParam(value = "name") String keywords) {
+
     @RequestMapping("/tabletest/GetDepartment")
     @ResponseBody
     public ResponseEntity<?> GetDepartment(HttpServletRequest request) {
